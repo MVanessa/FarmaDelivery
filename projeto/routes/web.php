@@ -15,4 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/homepage','HomePageController@exibeHome');
+Route::get('/home','HomeController@exibeHome');
