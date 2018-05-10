@@ -16,3 +16,8 @@ Route::get('/', function () {
 });
 
 Route::get('/home','HomeController@exibeHome');
+
+Route::get('/cadastromedicamentos','CadastroMedicamentosController@exibeCadastroMedicamentos');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
