@@ -6,7 +6,6 @@ header {
 	background-color: #424242;
 	color: #fff;
 	min-height: 30px;
-	padding-left: 50px;
 	padding-top: 15px;
 	padding-bottom: 15px;
 }
@@ -35,6 +34,7 @@ header a {
 
 header nav ul li a:hover {
   color: #2ECCFA;
+  text-decoration: none;
 }
 
 .titulo {

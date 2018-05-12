@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.default')
 
 @section('conteudo')
 <div class="container">

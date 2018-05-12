@@ -17,11 +17,12 @@ class CreateMedicamentosTable extends Migration
             $table->increments('id');
             $table->string('nome',60);
             $table->string('fabricante',60);
+            $table->integer('qtd');
             $table->decimal('peso',5,2);
-            $table->string('indicacao');
-            $table->string('contraindicacao');
-            $table->string('reacoes');
-            $table->string('img');
+            $table->string('indicacoes')->nullable();
+            $table->string('contraindicacoes')->nullable();
+            $table->string('reacoes')->nullable();
+            $table->string('img')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

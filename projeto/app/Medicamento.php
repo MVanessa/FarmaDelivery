@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Medicamento extends Model
 {
-    protected $fillable = ['nome','fabricante','peso','indicacao','contraindicacao','reacoes'];
-    protected $guarded = ['id', 'created_at', 'update_at'];
+	protected $primaryKey = "id";
+    protected $fillable = ['nome','fabricante','qtd','peso','indicacoes','contraindicacoes','reacoes'];
+    protected $guarded = ['id', 'created_at', 'update_at','img'];
     protected $table = 'medicamentos';
 }

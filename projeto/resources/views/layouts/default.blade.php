@@ -12,11 +12,12 @@
 			<h1 class="titulo"><span id="nome">Farma</span>Delivery</h1>
 			<nav>
 				<ul>
-					<li><a href="contato.html">Contato</a></li>
-					<li><a href="sobre.html">Quem Somos</a></li>
+					<li><a href="{!! url('/home') !!}">Home</a></li>
 					<li><a href="{!! url('/pedidos') !!}">Meus Pedidos</a></li>
+					<li><a href="{!! url('/sobre') !!}">Quem Somos</a></li>
 					<li><a href="{!! url('/login') !!}">Login</a></li>
 					<li><a href="{!! url('/logout') !!}">Logout</a></li>
+					<li><a href="{!! url('/contato') !!}">Contato</a></li>
 				</ul>
 			</nav>
 		</div>
