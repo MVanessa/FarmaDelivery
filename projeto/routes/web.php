@@ -15,9 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home','HomeController@exibeHome');
+Route::get('/home','HomeController@index');
 
-Route::get('/cadastromedicamentos','CadastroMedicamentosController@exibeCadastroMedicamentos');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+Route::group(['middleware' => ['web']], function(){
+	Route::resource('medicamentos', 'MedicamentosController');
+});

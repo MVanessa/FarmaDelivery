@@ -12,7 +12,7 @@ header {
 }
 
 .topo {
-  min-width: 1300px;
+  min-width: 1600px;
   position: fixed;
 }
 
@@ -38,6 +38,7 @@ header nav ul li a:hover {
 }
 
 .titulo {
+  margin-left: none;
 	float: left;
 	font-size: 30px;
 	font-weight: bold;
