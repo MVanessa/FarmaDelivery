@@ -35,6 +35,37 @@ class MedicamentosController extends Controller
         $medicamento->contraindicacoes = $request->contraindicacoes;
         $medicamento->reacoes = $request->reacoes;
         $medicamento->save();
+
         return redirect('medicamentos')->with('message', 'Medicamento cadastrado com sucesso!');
+    }
+
+    public function show($id)
+    {
+        $medicamento = Medicamento::find($id);
+        
+        return view('medicamentos.show', compact('medicamento'));
+    }
+
+    public function edit($id)
+    {
+        $medicamento = Medicamento::findOrFail($id);
+
+        return view('medicamentos.edit',compact('medicamento'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $medicamento = Medicamento::findOrFail($id);
+
+        $medicamento->nome = $request->nome;
+        $medicamento->fabricante = $request->fabricante;
+        $medicamento->qtd = $request->qtd;
+        $medicamento->peso = $request->peso;
+        $medicamento->indicacoes = $request->indicacoes;
+        $medicamento->contraindicacoes = $request->contraindicacoes;
+        $medicamento->reacoes = $request->reacoes;
+        $medicamento->save();
+
+        return redirect('medicamentos')->with('message', 'Medicamento atualizado com sucesso!');
     }
 }

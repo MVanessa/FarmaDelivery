@@ -31,8 +31,8 @@
             <td>{{ $medicamento->contraindicacoes }}</td>
             <td>{{ $medicamento->reacoes }}</td>
             <td>
-                <a class="btn btn-info" href="#">Mostrar</a>
-                <a class="btn btn-primary" href="#">Editar</a>
+                <a class="btn btn-info" href="{{ route('medicamentos.show',$medicamento->id) }}">Detalhes</a>
+                <a class="btn btn-primary" href="{{ route('medicamentos.edit',$medicamento->id) }}">Editar</a>
             </td>
         </tr>
         @endforeach
