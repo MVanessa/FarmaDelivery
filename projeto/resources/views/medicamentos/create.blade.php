@@ -29,7 +29,6 @@
                         <strong>Reações:</strong>
                         <input type="text" name="reacoes" class="form-control" placeholder="ex: pode ocorrer sonolência" autofocus>
                     </div>
-
                 <div class="form-group">
                     <input type="submit" class="btn btn-success" value="Cadastrar">
                 </div>

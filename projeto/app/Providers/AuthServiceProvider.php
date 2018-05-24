@@ -25,6 +25,14 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Gate::define('doPerfil', function ($user,$type) {
+            if(!$user) return false;
+        return $user->user_type == $type;
+        });
+
+        Gate::define('ehCidadao', function ($user) {
+            if(!$user) return false;
+        return $user->user_type != 1;
+        });
     }
 }

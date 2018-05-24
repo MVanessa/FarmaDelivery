@@ -58,6 +58,11 @@
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     {{ __('Esqueceu sua senha?') }}
                                 </a>
+                                <br/>
+                                <br/>
+                                <a class="btn btn-link" href="{{ route('register') }}">
+                                    {{ __('Ainda não é cadastrado?') }}
+                                </a>
                             </div>
                         </div>
                     </form>

@@ -8,7 +8,7 @@
             </div>
         </div>
     </div>
-     
+    <br/>
     <table class="table table-bordered">
         <tr>
             <th>Nome</th>
@@ -33,6 +33,9 @@
             <td>
                 <a class="btn btn-info" href="{{ route('medicamentos.show',$medicamento->id) }}">Detalhes</a>
                 <a class="btn btn-primary" href="{{ route('medicamentos.edit',$medicamento->id) }}">Editar</a>
+                {!! Form::open(['method' => 'DELETE','route' => ['medicamentos.destroy', $medicamento->id],'style'=>'display:inline']) !!}
+                {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                {!! Form::close() !!}
             </td>
         </tr>
         @endforeach

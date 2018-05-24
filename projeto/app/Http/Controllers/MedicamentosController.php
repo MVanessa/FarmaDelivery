@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Medicamento;
+use Illuminate\Support\Facades\Gate;
 
 class MedicamentosController extends Controller
 {
+
     public function index(){
         $medicamentos = Medicamento::all();
         return view('medicamentos.index',['todosmedicamentos' => $medicamentos]);
@@ -15,6 +17,7 @@ class MedicamentosController extends Controller
 
     public function create()
     {
+
         return view('medicamentos.create');
     }
 
@@ -67,5 +70,15 @@ class MedicamentosController extends Controller
         $medicamento->save();
 
         return redirect('medicamentos')->with('message', 'Medicamento atualizado com sucesso!');
+    }
+
+    public function destroy($id)
+    {
+        $medicamento = Medicamento::findOrFail($id);
+        $medicamento->delete();
+
+        session()->flash('message', 'Medicamento foi excluído com sucesso!');
+
+        return redirect('medicamentos');
     }
 }

@@ -1,14 +1,10 @@
 @extends('layouts.default')
  
-
 @section('conteudo')
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
                 <h2>Exibir medicamento</h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('medicamentos.index') }}">Voltar</a>
             </div>
         </div>
     </div>
@@ -62,5 +58,10 @@
                 <strong>Reações:</strong>
                 {{ $medicamento->reacoes }}
             </div>
+        </div>
+
+        <br/>
+        <div class="pull-left">
+            <a class="btn btn-primary" href="{{ route('medicamentos.index') }}">Voltar</a>
         </div>
 @endsection
