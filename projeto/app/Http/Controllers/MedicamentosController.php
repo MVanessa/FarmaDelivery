@@ -56,6 +56,11 @@ class MedicamentosController extends Controller
         return view('medicamentos.edit',compact('medicamento'));
     }
 
+    public function solicitar()
+    {
+         return view('medicamentos.solicitar');
+    }
+
     public function update(Request $request, $id)
     {
         $medicamento = Medicamento::findOrFail($id);

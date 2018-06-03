@@ -12,10 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::get('/home','HomeController@index');
+
+
+Route::get('/medicamentos/solicitar','MedicamentosController@solicitar');
 
 Auth::routes();
 
@@ -24,3 +27,4 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::group(['middleware' => ['web']], function(){
 	Route::resource('medicamentos', 'MedicamentosController');
 });
+

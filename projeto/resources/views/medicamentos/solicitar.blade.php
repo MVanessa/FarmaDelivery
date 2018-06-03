@@ -1,4 +1,5 @@
 @extends('layouts.default')
+
 @section('conteudo')
-	<h1>Bem-vindo!</h1>
+	<h1>Olá</h1>
 @endsection

@@ -96,3 +96,18 @@ header nav {
 #buscar img{
   float:left;
 }
+
+.img-medicamento {
+  padding-bottom: 15px;
+}
+
+.img-medicamento img {
+  width: 250px;
+  height: 250px;
+  border: 1px solid #D8D8D8;
+}
+
+#solicitar{
+  margin-left: 15px;
+  margin-right: 5px;
+}

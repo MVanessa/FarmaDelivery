@@ -1,10 +1,15 @@
 @extends('layouts.default')
  
 @section('conteudo')
+
+    <div class="img-medicamento">
+        <img src="/img/medicamento-farmadelivery.png">
+    </div>
+
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Exibir medicamento</h2>
+                <h2>Detalhes do medicamento</h2>
             </div>
         </div>
     </div>
@@ -61,6 +66,11 @@
         </div>
 
         <br/>
+        @can ('doPerfil',1)
+        <div class="pull-right">
+            <a class="btn btn-success" id="solicitar" href="#">Solicitar</a>
+        </div>
+        @endcan
         <div class="pull-left">
             <a class="btn btn-primary" href="{{ route('medicamentos.index') }}">Voltar</a>
         </div>

@@ -64,14 +64,27 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $user_type = Input::get('user_type') ? 1 : 2;
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'user_type' => $user_type,
+            'user_type' => Input::get('user_type'),
             'cpf' => $data['cpf'],
             'data_nasc' => $data['data_nasc'],
             'password' => Hash::make($data['password']),
         ]);
+
+        if ($user->user_type == 1) {
+            Cidadao::create([
+                'id_user' => $user->id,
+                'endereco' => $data['endereco'],
+            ]);
+        } else {
+            Farmaceutico::create([
+                'id_user' => $user->id,
+                'crf' => $data['crf'],
+            ]);
+        }
+
+        return $user;
     }
 }

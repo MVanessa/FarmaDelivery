@@ -13,6 +13,17 @@ class TabelaMedicamentosSeeder extends Seeder
     public function run()
     {
         Medicamento::create([
+            'nome' => 'Maleato de enalapril',
+            'fabricante' => 'Sandoz',
+            'qtd' => (285),
+            'peso' => 0.85,
+            'indicacoes' => 'é indicado para o tratamento de hipertensão e insuficiência cardíaca',
+            'contraindicacoes' => 'contraindicado para pacientes com hipersensibilidade a qualquer componente do
+                produto',
+            'reacoes' => 'reações de tontura e cefaleia',
+        ]);
+
+        Medicamento::create([
             'nome' => 'Paracetamol',
             'fabricante' => 'Neoquímica',
             'qtd' => (50),
@@ -35,7 +46,7 @@ class TabelaMedicamentosSeeder extends Seeder
         ]);
 
         Medicamento::create([
-            'nome' => 'Sinvastatina ',
+            'nome' => 'Sinvastatina',
             'fabricante' => 'Medley',
             'qtd' => (85),
             'peso' => 0.010,
