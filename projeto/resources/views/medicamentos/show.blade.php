@@ -68,10 +68,11 @@
         <br/>
         @can ('doPerfil',1)
         <div class="pull-right">
-            <a class="btn btn-success" id="solicitar" href="#">Solicitar</a>
+            <a class="btn btn-success" id="solicitar" href="{{ route('solicitacoes.solicitar',$medicamento->id) }}">Solicitar</a>
         </div>
         @endcan
         <div class="pull-left">
-            <a class="btn btn-primary" href="{{ route('medicamentos.index') }}">Voltar</a>
+            <a class="btn btn-primary" id="voltar" href="{{ route('medicamentos.index') }}">Voltar</a>
         </div>
+    </div>
 @endsection

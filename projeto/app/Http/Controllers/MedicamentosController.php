@@ -3,13 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests;
 use App\Medicamento;
-use Illuminate\Support\Facades\Gate;
 
 class MedicamentosController extends Controller
 {
-
     public function index(){
         $medicamentos = Medicamento::all();
         return view('medicamentos.index',['todosmedicamentos' => $medicamentos]);
@@ -17,7 +14,6 @@ class MedicamentosController extends Controller
 
     public function create()
     {
-
         return view('medicamentos.create');
     }
 
@@ -39,7 +35,7 @@ class MedicamentosController extends Controller
         $medicamento->reacoes = $request->reacoes;
         $medicamento->save();
 
-        return redirect('medicamentos')->with('message', 'Medicamento cadastrado com sucesso!');
+        return redirect('medicamentos')->with('success', 'Medicamento cadastrado com sucesso!');
     }
 
     public function show($id)
@@ -54,11 +50,6 @@ class MedicamentosController extends Controller
         $medicamento = Medicamento::findOrFail($id);
 
         return view('medicamentos.edit',compact('medicamento'));
-    }
-
-    public function solicitar()
-    {
-         return view('medicamentos.solicitar');
     }
 
     public function update(Request $request, $id)

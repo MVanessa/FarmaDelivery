@@ -13,6 +13,7 @@ header {
 .topo {
   min-width: 1600px;
   position: fixed;
+  z-index: 2;
 }
 
 h2 {
@@ -65,38 +66,6 @@ header nav {
   margin-bottom: 30px;
 }
 
-#buscar{
-  background-color: #E6E6E6;
-  border: solid 2px #848484;
-  border-radius: 5px;
-  width: 500px;
-  height: 40px;
-  margin: 0 auto;
-}
- 
-#txtBusca{
-  float:left;
-  background-color: transparent;
-  padding-left:15px; 
-  font-size:18px;
-  border:none;
-  height:32px;
-  width:191px;
-}
- 
-#btnBusca{
-  border:none;
-  float:right;
-  height:40px;
-  width:90px;
-  font-weight:bold;
-  background: #848484;
-}
-
-#buscar img{
-  float:left;
-}
-
 .img-medicamento {
   padding-bottom: 15px;
 }
@@ -107,7 +76,15 @@ header nav {
   border: 1px solid #D8D8D8;
 }
 
-#solicitar{
-  margin-left: 15px;
+#solicitar, #confirmar, #voltar{
+  margin-left: 14px;
   margin-right: 5px;
+}
+
+input[type="number"], input[type="text"] {
+  margin: 5px 0;
+}
+
+#divBusca {
+  z-index: 1;
 }

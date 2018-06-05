@@ -19,7 +19,7 @@
                         <strong>Fabricante:</strong>
                         <input type="text" name="fabricante" class="form-control" placeholder="ex: eurofarma" autofocus>
                         <strong>Quantidade:</strong>
-                        <input type="number" name="qtd" class="form-control" placeholder="10" autofocus>
+                        <input type="number" name="qtd" min="0" class="form-control" placeholder="10" autofocus>
                         <strong>Peso:</strong>
                         <input type="number" name="peso" step="0.01" class="form-control" placeholder="0.5" autofocus>
                         <strong>Indicações:</strong>

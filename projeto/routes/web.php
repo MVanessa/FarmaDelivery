@@ -17,12 +17,12 @@ Route::get('/', function () {
 
 Route::get('/home','HomeController@index');
 
-
-Route::get('/medicamentos/solicitar','MedicamentosController@solicitar');
-
 Auth::routes();
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+Route::get('/medicamentos/{id}/solicitar', 'SolicitacoesController@solicitar')->name('solicitacoes.solicitar');
+Route::post('/solicitacoes/{id_user}/{id_medicamento}/create', 'SolicitacoesController@store')->name('solicitacoes.store');
 
 Route::group(['middleware' => ['web']], function(){
 	Route::resource('medicamentos', 'MedicamentosController');

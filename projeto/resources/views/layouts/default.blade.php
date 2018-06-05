@@ -29,6 +29,13 @@
 		</div>
 	</header>
 	<div class="box"></div>
+
+	<div id="app">
+        @include('flash-message')
+
+        @yield('content')
+    </div>
+    
 	<div class="container">
 		@section('conteudo')@show
 	</div>
