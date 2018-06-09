@@ -13,7 +13,7 @@ class MedicamentoTest extends TestCase
      *
      * @return void
      */
-    public function testCreateMedicamento()
+    public function testStoreMedicamento()
     {
         $data = [
             'nome' => 'Topiramato',
