@@ -19,12 +19,15 @@ Route::get('/home','HomeController@index');
 
 Auth::routes();
 
-Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+Route::group(['middleware' => ['auth']], function () {
+	Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+	Route::get('/medicamentos/{id}/solicitar', 'SolicitacoesController@solicitar')->name('solicitacoes.solicitar');
+	Route::post('/solicitacoes/{id_user}/{id_medicamento}/create', 'SolicitacoesController@store')->name('solicitacoes.store');
+	Route::get('/meus-pedidos','PedidosController@index');
+});
 
-Route::get('/medicamentos/{id}/solicitar', 'SolicitacoesController@solicitar')->name('solicitacoes.solicitar');
-Route::post('/solicitacoes/{id_user}/{id_medicamento}/create', 'SolicitacoesController@store')->name('solicitacoes.store');
-
-Route::group(['middleware' => ['web']], function(){
+Route::group(['middleware' => ['auth']], function(){
 	Route::resource('medicamentos', 'MedicamentosController');
 });
 
+Route::get('/medicamentos','MedicamentosController@index');

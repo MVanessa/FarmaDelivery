@@ -15,7 +15,7 @@
 					<li><a href="{!! url('/home') !!}">Home</a></li>
 					<li><a href="{!! url('/medicamentos') !!}">Medicamentos</a></li>
 					@can ('doPerfil',1)
-						<li><a href="{!! url('/pedidos') !!}">Meus Pedidos</a></li>
+						<li><a href="{!! url('/meus-pedidos') !!}">Meus Pedidos</a></li>
 					@endcan
 					<li>
 					@if (!Auth::check())

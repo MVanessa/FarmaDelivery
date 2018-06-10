@@ -88,3 +88,7 @@ input[type="number"], input[type="text"] {
 #divBusca {
   z-index: 1;
 }
+
+.msg {
+  text-align: center;
+}

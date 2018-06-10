@@ -1,5 +1,6 @@
-<?php use App\Http\Controllers\SolicitacoesController;?>
+<?php use App\Http\Controllers\SolicitacoesController; ?>
 <?php $endereco = SolicitacoesController::getEnderecoSolicitante(auth()->user()->id); ?>
+<?php $qtd = SolicitacoesController::verificaQtdDisponivel($medicamento->id); ?>
 
 @extends('layouts.default')
  
@@ -21,10 +22,17 @@
             </div>
         </div>
 
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                    <strong>Quantidade disponível em estoque:</strong>
+                    {{ $qtd }}
+            </div>
+        </div>
+
         <div class="col-sm-4-4 col-sm-4 col-md-4">
             <div class="form-group">          
-                <strong>Quantidade:</strong>
-                <input type="number" name="qtd" min="1" class="form-control" placeholder="1" autofocus>
+                <strong>Quantidade a ser solicitada:</strong>
+                <input type="number" name="qtd" min="1" max="<?=$qtd?>" class="form-control" placeholder="1" autofocus>
             </div>
         </div>
 
@@ -38,16 +46,19 @@
         </div>
 
         @if ( Auth::check() )
-        <div class="form-group">
-            <strong>Nome do solicitante:</strong>
-            {{ auth()->user()->name }}
-            
-        </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Nome do solicitante:</strong>
+                    {{ auth()->user()->name }}                
+                </div>
+            </div>
 
-        <div class="form-group">
-            <strong>Endereço:</strong>
-            {{ $endereco }}
-        </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Endereço:</strong>
+                    {{ $endereco }}
+                </div>
+            </div>
         @endif
         <div class="form-group">
             <input type="submit" class="btn btn-success" id="confirmar" value="Confirmar">

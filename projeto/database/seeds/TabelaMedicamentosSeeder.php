@@ -18,8 +18,7 @@ class TabelaMedicamentosSeeder extends Seeder
             'qtd' => (285),
             'peso' => 0.85,
             'indicacoes' => 'é indicado para o tratamento de hipertensão e insuficiência cardíaca',
-            'contraindicacoes' => 'contraindicado para pacientes com hipersensibilidade a qualquer componente do
-                produto',
+            'contraindicacoes' => 'contraindicado para pacientes com hipersensibilidade a qualquer componente do produto',
             'reacoes' => 'reações de tontura e cefaleia',
         ]);
 
@@ -29,8 +28,7 @@ class TabelaMedicamentosSeeder extends Seeder
             'qtd' => (50),
             'peso' => 0.50,
             'indicacoes' => 'para a redução da febre e o alívio temporário de dores, como dores associadas a resfriados, dor de cabeça e dores musculares',
-            'contraindicacoes' => 'contraindicado para pacientes com hipersensibilidade a qualquer componente do
-				produto',
+            'contraindicacoes' => 'contraindicado para pacientes com hipersensibilidade a qualquer componente do produto',
             'reacoes' => 'reação anafilática e hipersensibilidade',
         ]);
 
@@ -40,8 +38,7 @@ class TabelaMedicamentosSeeder extends Seeder
             'qtd' => (100),
             'peso' => 0.100,
             'indicacoes' => 'para o tratamento da hipertensão',
-            'contraindicacoes' => 'contraindicado para pacientes com hipersensibilidade a qualquer componente do
-				produto',
+            'contraindicacoes' => 'contraindicado para pacientes com hipersensibilidade a qualquer componente do produto',
             'reacoes' => 'reação anafilática e hipersensibilidade',
         ]);
 
@@ -51,8 +48,7 @@ class TabelaMedicamentosSeeder extends Seeder
             'qtd' => (85),
             'peso' => 0.010,
             'indicacoes' => 'é indicada para reduzir os riscos à saúde decorrentes das doenças cardiovasculares',
-            'contraindicacoes' => 'contraindicado para pacientes com hipersensibilidade a qualquer componente do
-				produto',
+            'contraindicacoes' => 'contraindicado para pacientes com hipersensibilidade a qualquer componente do produto',
             'reacoes' => 'reações de hipersensibilidade, como inchaço da face, língua e garganta',
         ]);
     }

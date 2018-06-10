@@ -65,16 +65,19 @@ class MedicamentosController extends Controller
         $medicamento->reacoes = $request->reacoes;
         $medicamento->save();
 
-        return redirect('medicamentos')->with('message', 'Medicamento atualizado com sucesso!');
+        return redirect('medicamentos')->with('success', 'Medicamento atualizado com sucesso!');
     }
 
     public function destroy($id)
     {
-        $medicamento = Medicamento::findOrFail($id);
-        $medicamento->delete();
+        try {
+            $medicamento = Medicamento::findOrFail($id);
+            $medicamento->delete();
 
-        session()->flash('message', 'Medicamento foi excluído com sucesso!');
-
-        return redirect('medicamentos');
+            session()->flash('success', 'Medicamento foi excluído com sucesso!');
+            return redirect('medicamentos');
+        } catch (\Exception $e) {
+            return redirect('medicamentos')->with('error', 'Não foi possível excluir o medicamento! '. $e->getMessage());
+        }
     }
 }
