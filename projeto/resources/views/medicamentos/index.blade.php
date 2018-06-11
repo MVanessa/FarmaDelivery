@@ -8,11 +8,11 @@
                 <h2>Medicamentos cadastrados</h2>
             </div>
             @can ('doPerfil',2)
-                <a class="btn btn-success" href="{{ route('medicamentos.create') }}">Cadastrar Novo Medicamento</a>
+                <a class="btn btn-success" id="cadastrar" href="{{ route('medicamentos.create') }}">Cadastrar Novo Medicamento</a>
             @endcan
 
             <div class="form-group row" id="divBusca">
-                <label for="busca" class="col-sm-2 col-form-label">Buscar</label>
+                <label for="busca" id="lbBusca" class="col-sm-2 col-form-label">Buscar</label>
                 <div class="col-sm-4">
                     <input type="text" class="form-control" id="busca" placeholder="informe o medicamento">
                 </div>
@@ -30,7 +30,11 @@
                 <th>Indicações</th>
                 <th>Contraindicações</th>
                 <th>Reações</th>
-                <th width="280px">Ação</th>
+                @if (Auth::check())
+                    <th width="250px">Ação</th>
+                @else
+                    <th width="100px">Ação</th>
+                @endif
             </tr>
         </thead>
         <tbody id="minha-tabela">

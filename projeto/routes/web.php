@@ -23,11 +23,11 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 	Route::get('/medicamentos/{id}/solicitar', 'SolicitacoesController@solicitar')->name('solicitacoes.solicitar');
 	Route::post('/solicitacoes/{id_user}/{id_medicamento}/create', 'SolicitacoesController@store')->name('solicitacoes.store');
-	Route::get('/meus-pedidos','PedidosController@index');
+	Route::get('/meus-pedidos','PedidosController@index')->name('solicitacoes.meuspedidos');
 });
 
 Route::group(['middleware' => ['auth']], function(){
 	Route::resource('medicamentos', 'MedicamentosController');
 });
 
-Route::get('/medicamentos','MedicamentosController@index');
+Route::get('/medicamentos','MedicamentosController@index')->name('medicamentos.index');

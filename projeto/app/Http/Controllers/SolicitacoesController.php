@@ -52,7 +52,7 @@ class SolicitacoesController extends Controller
 
         $this->atualizaEstoque($id_medicamento, $request->qtd);
 
-        return redirect('medicamentos')->with('success', 'Medicamento solicitado com sucesso!');
+        return redirect('/meus-pedidos')->with('success', 'Medicamento solicitado com sucesso!');
     }
 
 }

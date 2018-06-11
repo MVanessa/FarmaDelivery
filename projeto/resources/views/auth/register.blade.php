@@ -12,7 +12,7 @@
                         @csrf
 
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="user_type" type="radio" id="cidadao" value="1">
+                            <input class="form-check-input" name="user_type" checked="checked" type="radio" id="cidadao" value="1">
                             <label class="form-check-label" for="cidadao">Cidadão</label>
                         </div>
 
@@ -53,7 +53,7 @@
                             <label for="cpf" class="col-md-4 col-form-label text-md-right">{{ __('CPF') }}</label>
 
                             <div class="col-md-6">
-                                <input id="cpf" type="text" class="form-control{{ $errors->has('cpf') ? ' is-invalid' : '' }}" name="cpf" value="{{ old('cpf') }}" required>
+                                <input id="cpf" type="text" class="form-control{{ $errors->has('cpf') ? ' is-invalid' : '' }}" name="cpf" value="{{ old('cpf') }}" pattern="^([0-9]{3}\.?){3}-?[0-9]{2}$" required>
 
                                 @if ($errors->has('cpf'))
                                     <span class="invalid-feedback">
@@ -64,9 +64,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="cpf" class="col-md-4 col-form-label text-md-right">{{ __('Data de Nascimento') }}</label>
-
-                            <input type="date" name="data_nasc" class="form-control" autofocus>
+                            <label for="data_nasc" class="col-md-4 col-form-label text-md-right">{{ __('Data de Nascimento') }}</label>
+                            <div class="col-md-6">
+                                <input type="date" name="data_nasc" class="form-control" autofocus>
+                            </div>
                         </div>
 
                         <div class="form-group row">
@@ -99,7 +100,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row" style="display:none" id="enderecoDiv">
+                        <div class="form-group row" id="enderecoDiv">
                             <label for="endereco" class="col-md-4 col-form-label text-md-right">{{ __('Endereço') }}</label>
 
                             <div class="col-md-6">

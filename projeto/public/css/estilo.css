@@ -76,7 +76,7 @@ header nav {
   border: 1px solid #D8D8D8;
 }
 
-#solicitar, #confirmar, #voltar{
+#solicitar, #confirmar {
   margin-left: 14px;
   margin-right: 5px;
 }
@@ -87,6 +87,10 @@ input[type="number"], input[type="text"] {
 
 #divBusca {
   z-index: 1;
+}
+
+#cadastrar {
+  float: right;
 }
 
 .msg {

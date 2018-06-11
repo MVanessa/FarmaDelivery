@@ -1,5 +1,5 @@
 $(document).ready(function(){
-     $('#farmaceutico').click(function () {
+    $('#farmaceutico').click(function () {
         $('#crfDiv').show();
         $('#enderecoDiv').hide();
     });

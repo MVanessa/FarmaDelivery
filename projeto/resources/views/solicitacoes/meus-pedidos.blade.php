@@ -8,6 +8,12 @@
             <div class="pull-left">
                 <h2>Meus pedidos:</h2>
             </div>
+            <div class="form-group row" id="divBusca">
+                <label for="busca" id="lbBusca" class="col-sm-2 col-form-label">Buscar</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="busca" placeholder="informe o medicamento">
+                </div>
+            </div>
        	</div>
     </div>
     <table class="table table-bordered">
@@ -16,7 +22,6 @@
                 <th>Nome do Medicamento</th>
                 <th>Fabricante</th>
                 <th>Quantidade</th>
-                <th>Data da Solicitação</th>
             </tr>
         </thead>
         <tbody id="minha-tabela">
@@ -24,11 +29,13 @@
         	<tr>
                 <td> {{ $nome = Medicamento::getName($solicitacao->id_medicamento) }} </td>
                 <td> {{ $fabricante = Medicamento::getFabricante($solicitacao->id_medicamento) }} </td>
-                <td>{{ $solicitacao->qtd }}</td>
-                <?php $data = new DateTime($solicitacao->created_at); ?>
-                <td>{{ date_format($data, 'd/m/y') }}</td>
+                <td> {{ $solicitacao->qtd }}</td>
         	</tr>
         	@endforeach
         </tbody>
     </table>
+
+    <div class="pull-left">
+        <a class="btn btn-primary" id="voltar" href="{{ route('medicamentos.index') }}">Voltar</a>
+    </div>
 @endsection
