@@ -26,8 +26,7 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::get('/meus-pedidos','PedidosController@index')->name('solicitacoes.meuspedidos');
 });
 
-Route::group(['middleware' => ['auth']], function(){
+Route::group(['middleware' => ['web']], function(){
 	Route::resource('medicamentos', 'MedicamentosController');
 });
 
-Route::get('/medicamentos','MedicamentosController@index')->name('medicamentos.index');
